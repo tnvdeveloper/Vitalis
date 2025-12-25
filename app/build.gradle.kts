@@ -13,7 +13,7 @@ plugins {
 
 android {
     namespace = "com.tnvdeveloper.vitalis"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.tnvdeveloper.vitalis"
