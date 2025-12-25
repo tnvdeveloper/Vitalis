@@ -5,7 +5,10 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.ksp)
     alias(libs.plugins.hilt)
-    id("org.jetbrains.kotlin.plugin.compose") version "2.1.0"  // ✅ НОВЫЙ ПЛАГИН
+    id("org.jetbrains.kotlin.plugin.compose") version "2.3.0"  // ✅ НОВЫЙ ПЛАГИН
+    // В plugins добавьте:
+    id("dagger.hilt.android.plugin")
+
 }
 
 android {

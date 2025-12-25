@@ -10,7 +10,7 @@ import com.tnvdeveloper.vitalis.data.model.BloodPressureRecord
     version = 1,
     exportSchema = false
 )
-@TypeConverters(DateConverter::class)
+@TypeConverters(Converters::class)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun bloodPressureDao(): BloodPressureDao
 }
