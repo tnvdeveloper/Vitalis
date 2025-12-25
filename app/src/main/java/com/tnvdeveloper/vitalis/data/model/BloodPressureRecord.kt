@@ -14,5 +14,6 @@ data class BloodPressureRecord(
     val timestamp: Date = Date(),
     val weight: Float? = null,
     val temperature: Float? = null,
+    val bloodSugar: Float? = null,
     val notes: String = ""
 )

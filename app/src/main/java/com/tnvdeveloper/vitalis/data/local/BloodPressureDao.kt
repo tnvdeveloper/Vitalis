@@ -1,17 +1,16 @@
 package com.tnvdeveloper.vitalis.data.local
 
-import androidx.room.*
-import com.tnvdeveloper.vitalis.data.model.BloodPressureRecord
-import kotlinx.coroutines.flow.Flow
+import androidx.room.TypeConverter
+import java.util.Date
 
-@Dao
-interface BloodPressureDao {
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(record: BloodPressureRecord)
+class Converters {
+    @TypeConverter
+    fun fromTimestamp(value: Long?): Date? {
+        return value?.let { Date(it) }
+    }
 
-    @Query("SELECT * FROM blood_pressure_records ORDER BY timestamp DESC")
-    fun getAllRecords(): Flow<List<BloodPressureRecord>>
-
-    @Delete
-    suspend fun delete(record: BloodPressureRecord)
+    @TypeConverter
+    fun dateToTimestamp(date: Date?): Long? {
+        return date?.time
+    }
 }
